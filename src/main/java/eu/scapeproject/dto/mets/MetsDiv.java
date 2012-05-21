@@ -1,11 +1,13 @@
 package eu.scapeproject.dto.mets;
 
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement(name = "div", namespace = "http://www.loc.gov/METS/")
 public class MetsDiv {
@@ -31,8 +33,10 @@ public class MetsDiv {
     private List<MetsFilePtr> filePointers;
     @XmlElement(name = "mptr", namespace = "http://www.loc.gov/METS/")
     private List<MetsPtr> metsPointers;
-    
-    private MetsDiv(){
+    @XmlElement(name = "div", namespace = "http://www.loc.gov/METS/")
+    private List<MetsDiv> subDivs;
+
+    private MetsDiv() {
         super();
     }
 
@@ -48,6 +52,7 @@ public class MetsDiv {
         this.xlinkLabel = builder.xlinkLabel;
         this.filePointers = builder.filePointers;
         this.metsPointers = builder.metsPointers;
+        this.subDivs = builder.subDivs;
     }
 
     public String getAdmId() {
@@ -106,6 +111,15 @@ public class MetsDiv {
         private String xlinkLabel;
         private List<MetsFilePtr> filePointers;
         private List<MetsPtr> metsPointers;
+        private List<MetsDiv> subDivs;
+
+        public Builder addSubDiv(MetsDiv subDiv) {
+            if (this.subDivs == null) {
+                this.subDivs = new ArrayList<MetsDiv>();
+            }
+            this.subDivs.add(subDiv);
+            return this;
+        }
 
         public Builder admId(String admId) {
             this.admId = admId;

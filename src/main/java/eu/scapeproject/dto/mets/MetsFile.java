@@ -1,5 +1,6 @@
 package eu.scapeproject.dto.mets;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -35,6 +36,8 @@ public class MetsFile {
     private String use;
     @XmlElement(name="FLocat", namespace = "http://www.loc.gov/METS/")
     private List<MetsFileLocation> fileLocations;
+    @XmlElement(name="stream",namespace="http://www.loc.gov/METS/")
+    private List<MetsStream> streams;
     private MetsFile() {
         super();
     }
@@ -53,7 +56,7 @@ public class MetsFile {
         this.groupId = builder.groupId;
         this.use = builder.use;
         this.fileLocations=builder.fileLocations;
-        
+        this.streams=builder.streams;
     }
 
     public String getAdmId() {
@@ -118,7 +121,15 @@ public class MetsFile {
         private String groupId;
         private String use;
         private List<MetsFileLocation> fileLocations;
-
+        private List<MetsStream> streams;
+        
+        public Builder addStream(MetsStream stream){
+            if (this.streams == null){
+                this.streams=new ArrayList<MetsStream>();
+            }
+            this.streams.add(stream);
+            return this;
+        }
         public Builder(String id) {
             this.id = id;
         }

@@ -1,5 +1,6 @@
 package eu.scapeproject.dto.mets;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAttribute;
@@ -30,8 +31,6 @@ public class MetsDocument {
     private List<MetsFileSec> fileSecs;
     @XmlElement(name = "structMap", namespace = "http://www.loc.gov/METS/")
     private List<MetsStructMap> structMaps;
-    @XmlElement(name = "structLink", namespace = "http://www.loc.gov/METS/")
-    private List<MetsStructLink> structLinks;
 
     private MetsDocument() {
         super();
@@ -48,7 +47,6 @@ public class MetsDocument {
         this.amdSecs = builder.amdSecs;
         this.fileSecs = builder.fileSecs;
         this.structMaps = builder.structMaps;
-        this.structLinks = builder.structLinks;
     }
 
     public List<MetsAMDSec> getAmdSecs() {
@@ -97,12 +95,43 @@ public class MetsDocument {
         private String label;
         private String type;
         private String profile;
-        private List<MetsHeader> headers;
         private MetsDMDSec dmdSec;
+        private List<MetsHeader> headers;
         private List<MetsAMDSec> amdSecs;
         private List<MetsFileSec> fileSecs;
         private List<MetsStructMap> structMaps;
-        private List<MetsStructLink> structLinks;
+
+        public Builder addHeader(MetsHeader header){
+            if (this.headers == null){
+                this.headers=new ArrayList<MetsHeader>();
+            }
+            this.headers.add(header);
+            return this;
+        }
+        
+        public Builder addAmdSec(MetsAMDSec amdSec){
+            if (this.amdSecs == null){
+                this.amdSecs=new ArrayList<MetsAMDSec>();
+            }
+            this.amdSecs.add(amdSec);
+            return this;
+        }
+        
+        public Builder addfileSec(MetsFileSec fileSec){
+            if (this.fileSecs == null){
+                this.fileSecs=new ArrayList<MetsFileSec>();
+            }
+            this.fileSecs.add(fileSec);
+            return this;
+        }
+
+        public Builder addstructMap(MetsStructMap structMap){
+            if (this.structMaps == null){
+                this.structMaps=new ArrayList<MetsStructMap>();
+            }
+            this.structMaps.add(structMap);
+            return this;
+        }
 
         public Builder amdSecs(List<MetsAMDSec> amdSecs) {
             this.amdSecs = amdSecs;
@@ -145,11 +174,6 @@ public class MetsDocument {
 
         public Builder profile(String profile) {
             this.profile = profile;
-            return this;
-        }
-
-        public Builder structLinks(List<MetsStructLink> structLinks) {
-            this.structLinks = structLinks;
             return this;
         }
 

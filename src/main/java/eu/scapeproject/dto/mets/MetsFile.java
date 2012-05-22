@@ -8,36 +8,37 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name="file", namespace = "http://www.loc.gov/METS/")
+@XmlRootElement(name = "file", namespace = "http://www.loc.gov/METS/")
 public class MetsFile {
-    @XmlAttribute(name="id", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "id", namespace = "http://www.loc.gov/METS/")
     private String id;
-    @XmlAttribute(name="mimetype", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "mimetype", namespace = "http://www.loc.gov/METS/")
     private String mimeType;
-    @XmlAttribute(name="seq", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "seq", namespace = "http://www.loc.gov/METS/")
     private int seq;
-    @XmlAttribute(name="size", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "size", namespace = "http://www.loc.gov/METS/")
     private int size;
-    @XmlAttribute(name="created", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "created", namespace = "http://www.loc.gov/METS/")
     private Date created;
-    @XmlAttribute(name="checksum", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "checksum", namespace = "http://www.loc.gov/METS/")
     private String checkSum;
-    @XmlAttribute(name="checksumtype", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "checksumtype", namespace = "http://www.loc.gov/METS/")
     private String checksumType;
-    @XmlAttribute(name="ownerid", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "ownerid", namespace = "http://www.loc.gov/METS/")
     private String ownerId;
-    @XmlAttribute(name="admid", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "admid", namespace = "http://www.loc.gov/METS/")
     private String admId;
-    @XmlAttribute(name="dmdid", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "dmdid", namespace = "http://www.loc.gov/METS/")
     private String dmdId;
-    @XmlAttribute(name="groupid", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "groupid", namespace = "http://www.loc.gov/METS/")
     private String groupId;
-    @XmlAttribute(name="use", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "use", namespace = "http://www.loc.gov/METS/")
     private String use;
-    @XmlElement(name="FLocat", namespace = "http://www.loc.gov/METS/")
+    @XmlElement(name = "FLocat", namespace = "http://www.loc.gov/METS/")
     private List<MetsFileLocation> fileLocations;
-    @XmlElement(name="stream",namespace="http://www.loc.gov/METS/")
+    @XmlElement(name = "stream", namespace = "http://www.loc.gov/METS/")
     private List<MetsStream> streams;
+
     private MetsFile() {
         super();
     }
@@ -55,8 +56,16 @@ public class MetsFile {
         this.dmdId = builder.dmdId;
         this.groupId = builder.groupId;
         this.use = builder.use;
-        this.fileLocations=builder.fileLocations;
-        this.streams=builder.streams;
+        this.fileLocations = builder.fileLocations;
+        this.streams = builder.streams;
+    }
+
+    public List<MetsStream> getStreams() {
+        return streams;
+    }
+
+    public List<MetsFileLocation> getFileLocations() {
+        return fileLocations;
     }
 
     public String getAdmId() {
@@ -122,14 +131,23 @@ public class MetsFile {
         private String use;
         private List<MetsFileLocation> fileLocations;
         private List<MetsStream> streams;
-        
-        public Builder addStream(MetsStream stream){
-            if (this.streams == null){
-                this.streams=new ArrayList<MetsStream>();
+
+        public Builder addStream(MetsStream stream) {
+            if (this.streams == null) {
+                this.streams = new ArrayList<MetsStream>();
             }
             this.streams.add(stream);
             return this;
         }
+
+        public Builder addfileLocation(MetsFileLocation location) {
+            if (this.fileLocations == null) {
+                this.fileLocations = new ArrayList<MetsFileLocation>();
+            }
+            this.fileLocations.add(location);
+            return this;
+        }
+
         public Builder(String id) {
             this.id = id;
         }
@@ -192,9 +210,14 @@ public class MetsFile {
             this.use = use;
             return this;
         }
-        
-        public Builder fileLocations(List<MetsFileLocation> fileLocations){
-            this.fileLocations=fileLocations;
+
+        public Builder streams(List<MetsStream> streams) {
+            this.streams = streams;
+            return this;
+        }
+
+        public Builder fileLocations(List<MetsFileLocation> fileLocations) {
+            this.fileLocations = fileLocations;
             return this;
         }
     }

@@ -12,6 +12,7 @@ public class MetsMDWrap {
         return xmlData;
     }
 
+    @SuppressWarnings("unused")
     private MetsMDWrap() {
         super();
     }

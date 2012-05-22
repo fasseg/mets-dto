@@ -7,7 +7,6 @@ import java.util.List;
 import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlTransient;
 
 @XmlRootElement(name = "div", namespace = "http://www.loc.gov/METS/")
 public class MetsDiv {
@@ -99,6 +98,10 @@ public class MetsDiv {
         return xlinkLabel;
     }
 
+    public List<MetsDiv> getSubDivs() {
+        return subDivs;
+    }
+    
     public static class Builder {
         private String id;
         private String type;
@@ -118,6 +121,22 @@ public class MetsDiv {
                 this.subDivs = new ArrayList<MetsDiv>();
             }
             this.subDivs.add(subDiv);
+            return this;
+        }
+
+        public Builder addFilePointer(MetsFilePtr filePointer) {
+            if (this.filePointers == null) {
+                this.filePointers = new ArrayList<MetsFilePtr>();
+            }
+            this.filePointers.add(filePointer);
+            return this;
+        }
+
+        public Builder addMetsPointer(MetsPtr metspointer) {
+            if (this.metsPointers == null) {
+                this.metsPointers = new ArrayList<MetsPtr>();
+            }
+            this.metsPointers.add(metspointer);
             return this;
         }
 

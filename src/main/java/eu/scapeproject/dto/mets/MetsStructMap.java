@@ -1,5 +1,6 @@
 package eu.scapeproject.dto.mets;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.xml.bind.annotation.XmlAttribute;
@@ -52,6 +53,14 @@ public class MetsStructMap {
 
         public MetsStructMap build() {
             return new MetsStructMap(this);
+        }
+
+        public Builder addDivision(MetsDiv div) {
+            if (this.divisions == null) {
+                this.divisions = new ArrayList<MetsDiv>();
+            }
+            this.divisions.add(div);
+            return this;
         }
 
         public Builder divisions(List<MetsDiv> divisions) {

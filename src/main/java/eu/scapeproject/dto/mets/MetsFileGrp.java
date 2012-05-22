@@ -1,5 +1,6 @@
 package eu.scapeproject.dto.mets;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -71,6 +72,14 @@ public class MetsFileGrp {
 
         public MetsFileGrp build() {
             return new MetsFileGrp(this);
+        }
+
+        public Builder addFile(MetsFile file) {
+            if (this.files == null) {
+                this.files = new ArrayList<MetsFile>();
+            }
+            this.files.add(file);
+            return this;
         }
 
         public Builder files(List<MetsFile> files) {

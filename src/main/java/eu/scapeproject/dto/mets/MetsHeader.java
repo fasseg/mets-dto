@@ -1,5 +1,6 @@
 package eu.scapeproject.dto.mets;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -77,6 +78,22 @@ public class MetsHeader {
 
         public Builder(String id) {
             this.id = id;
+        }
+
+        public Builder addAgent(MetsAgent agent) {
+            if (this.agents == null) {
+                this.agents = new ArrayList<MetsAgent>();
+            }
+            this.agents.add(agent);
+            return this;
+        }
+
+        public Builder addAlternativeIdentifier(MetsAlternativeIdentifer id) {
+            if (this.alternativeIdentifiers == null) {
+                this.alternativeIdentifiers = new ArrayList<MetsAlternativeIdentifer>();
+            }
+            this.alternativeIdentifiers.add(id);
+            return this;
         }
 
         public Builder agents(List<MetsAgent> agents) {

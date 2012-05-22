@@ -11,6 +11,7 @@ public class MetsAlternativeIdentifer {
     @XmlValue
     private String value;
     
+    @SuppressWarnings("unused")
     private MetsAlternativeIdentifer(){
         super();
     }

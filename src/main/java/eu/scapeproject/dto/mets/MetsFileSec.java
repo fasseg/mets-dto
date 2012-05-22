@@ -13,6 +13,7 @@ public class MetsFileSec {
     @XmlElement(name = "fileGrp", namespace = "http://www.loc.gov/METS/")
     private List<MetsFileGrp> fileGroups;
 
+    @SuppressWarnings("unused")
     private MetsFileSec() {
         super();
     }

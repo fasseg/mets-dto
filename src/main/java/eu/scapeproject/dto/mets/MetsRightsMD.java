@@ -6,11 +6,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="rightsMD", namespace = "http://www.loc.gov/METS/")
 public class MetsRightsMD {
-    @XmlAttribute(name = "id", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "ID", namespace = "http://www.loc.gov/METS/")
     private String id;
-    @XmlAttribute(name = "groupid", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "GROUPID", namespace = "http://www.loc.gov/METS/")
     private String groupId;
-    @XmlAttribute(name = "admid", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "ADMID", namespace = "http://www.loc.gov/METS/")
     private String admId;
     @XmlElement(name = "mdWrap", namespace = "http://www.loc.gov/METS/")
     private MetsMDWrap metadataWrapper;

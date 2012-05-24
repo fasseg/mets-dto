@@ -10,28 +10,26 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "div", namespace = "http://www.loc.gov/METS/")
 public class MetsDiv {
-    @XmlAttribute(name = "id", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "ID", namespace = "http://www.loc.gov/METS/")
     private String id;
-    @XmlAttribute(name = "type", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "TYPE", namespace = "http://www.loc.gov/METS/")
     private String type;
-    @XmlAttribute(name = "label", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "LABEL", namespace = "http://www.loc.gov/METS/")
     private String label;
-    @XmlAttribute(name = "dmdid", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "DMDID", namespace = "http://www.loc.gov/METS/")
     private String dmdId;
-    @XmlAttribute(name = "admid", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "ADMID", namespace = "http://www.loc.gov/METS/")
     private String admId;
-    @XmlAttribute(name = "order", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "ORDER", namespace = "http://www.loc.gov/METS/")
     private int order;
-    @XmlAttribute(name = "orderlabel", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "ORDERLABEL", namespace = "http://www.loc.gov/METS/")
     private String orderLabel;
-    @XmlAttribute(name = "contentids", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "CONTENTIDS", namespace = "http://www.loc.gov/METS/")
     private URI contentIds;
-    @XmlAttribute(name = "label", namespace = "http://www.w3.org/1999/xlink")
+    @XmlAttribute(name = "LABEL", namespace = "http://www.w3.org/1999/xlink")
     private String xlinkLabel;
     @XmlElement(name = "fptr", namespace = "http://www.loc.gov/METS/")
     private List<MetsFilePtr> filePointers;
-    @XmlElement(name = "mptr", namespace = "http://www.loc.gov/METS/")
-    private List<MetsPtr> metsPointers;
     @XmlElement(name = "div", namespace = "http://www.loc.gov/METS/")
     private List<MetsDiv> subDivs;
 
@@ -50,7 +48,6 @@ public class MetsDiv {
         this.contentIds = builder.contentIds;
         this.xlinkLabel = builder.xlinkLabel;
         this.filePointers = builder.filePointers;
-        this.metsPointers = builder.metsPointers;
         this.subDivs = builder.subDivs;
     }
 
@@ -78,10 +75,6 @@ public class MetsDiv {
         return label;
     }
 
-    public List<MetsPtr> getMetsPointers() {
-        return metsPointers;
-    }
-
     public int getOrder() {
         return order;
     }
@@ -101,7 +94,7 @@ public class MetsDiv {
     public List<MetsDiv> getSubDivs() {
         return subDivs;
     }
-    
+
     public static class Builder {
         private String id;
         private String type;
@@ -113,7 +106,6 @@ public class MetsDiv {
         private URI contentIds;
         private String xlinkLabel;
         private List<MetsFilePtr> filePointers;
-        private List<MetsPtr> metsPointers;
         private List<MetsDiv> subDivs;
 
         public Builder addSubDiv(MetsDiv subDiv) {
@@ -129,14 +121,6 @@ public class MetsDiv {
                 this.filePointers = new ArrayList<MetsFilePtr>();
             }
             this.filePointers.add(filePointer);
-            return this;
-        }
-
-        public Builder addMetsPointer(MetsPtr metspointer) {
-            if (this.metsPointers == null) {
-                this.metsPointers = new ArrayList<MetsPtr>();
-            }
-            this.metsPointers.add(metspointer);
             return this;
         }
 
@@ -171,11 +155,6 @@ public class MetsDiv {
 
         public Builder label(String label) {
             this.label = label;
-            return this;
-        }
-
-        public Builder metsPointers(List<MetsPtr> metsPointers) {
-            this.metsPointers = metsPointers;
             return this;
         }
 

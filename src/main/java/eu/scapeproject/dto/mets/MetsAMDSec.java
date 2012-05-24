@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "amdSec", namespace = "http://www.loc.gov/METS/")
 public class MetsAMDSec {
-    @XmlAttribute(name = "id")
+    @XmlAttribute(name = "ID")
     private String id;
     @XmlElement(name = "techMD", namespace = "http://www.loc.gov/METS/")
     private MetsTechMD technicalMetadata;

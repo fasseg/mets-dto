@@ -9,11 +9,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "structMap", namespace = "http://www.loc.gov/METS/")
 public class MetsStructMap {
-    @XmlAttribute(name = "id", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "ID", namespace = "http://www.loc.gov/METS/")
     private String id;
-    @XmlAttribute(name = "type", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "TYPE", namespace = "http://www.loc.gov/METS/")
     private String type;
-    @XmlAttribute(name = "label", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "LABEL", namespace = "http://www.loc.gov/METS/")
     private String label;
     @XmlElement(name = "div", namespace = "http://www.loc.gov/METS/")
     private List<MetsDiv> divisions;

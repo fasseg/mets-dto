@@ -10,19 +10,19 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "metsHdr", namespace = "http://www.loc.gov/METS/")
 public class MetsHeader {
-    @XmlAttribute(name = "id")
+    @XmlAttribute(name = "ID")
     private String id;
-    @XmlAttribute(name = "admid")
+    @XmlAttribute(name = "ADMID")
     private String admId;
-    @XmlAttribute(name = "createDate")
+    @XmlAttribute(name = "CREATEDATE")
     private Date createdDate;
-    @XmlAttribute(name = "lastmoddate")
+    @XmlAttribute(name = "LASTMODDATE")
     private Date lastModDate;
-    @XmlAttribute(name = "recordstatus")
+    @XmlAttribute(name = "RECORDSTATUS")
     private String recordStatus;
     @XmlElement(name = "agent", namespace = "http://www.loc.gov/METS/")
     private List<MetsAgent> agents;
-    @XmlElement(name = "altRecordId", namespace = "http://www.loc.gov/METS/")
+    @XmlElement(name = "altRecordID", namespace = "http://www.loc.gov/METS/")
     private List<MetsAlternativeIdentifer> alternativeIdentifiers;
 
     private MetsHeader() {

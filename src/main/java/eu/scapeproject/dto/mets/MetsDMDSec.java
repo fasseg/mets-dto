@@ -8,15 +8,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "dmdSec")
 public class MetsDMDSec {
-    @XmlAttribute(name = "id")
+    @XmlAttribute(name = "ID")
     private String id;
-    @XmlAttribute(name = "groupId")
+    @XmlAttribute(name = "GROUPID")
     private String groupId;
-    @XmlAttribute(name = "admId")
+    @XmlAttribute(name = "ADMID")
     private String admId;
-    @XmlAttribute(name = "created")
+    @XmlAttribute(name = "CREATED")
     private Date created;
-    @XmlAttribute(name = "status")
+    @XmlAttribute(name = "STATUS")
     private String status;
     @XmlElement(name = "mdWrap", namespace = "http://www.loc.gov/METS/")
     private MetsMDWrap metadataWrapper;

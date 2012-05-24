@@ -6,19 +6,19 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "agent", namespace = "http://www.loc.gov/METS/")
 public class MetsAgent {
-    @XmlAttribute(name = "id")
+    @XmlAttribute(name = "ID")
     private String id;
-    @XmlAttribute(name = "role")
+    @XmlAttribute(name = "ROLE")
     private String role;
-    @XmlAttribute(name = "otherrole")
+    @XmlAttribute(name = "OTHERROLE")
     private String otherRole;
-    @XmlAttribute(name = "type")
+    @XmlAttribute(name = "TYPE")
     private String type;
-    @XmlAttribute(name = "othertype")
+    @XmlAttribute(name = "OTHERTYPE")
     private String otherType;
-    @XmlElement(name = "name")
+    @XmlElement(name = "name", namespace = "http://www.loc.gov/METS/")
     private String name;
-    @XmlElement(name = "note")
+    @XmlElement(name = "note", namespace = "http://www.loc.gov/METS/")
     private String note;
 
     private MetsAgent() {

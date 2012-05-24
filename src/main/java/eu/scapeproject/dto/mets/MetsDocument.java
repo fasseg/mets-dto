@@ -11,15 +11,15 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "mets", namespace = "http://www.loc.gov/METS/")
 @XmlType(namespace = "http://www.loc.gov/METS/")
 public class MetsDocument {
-    @XmlAttribute(name = "id")
+    @XmlAttribute(name = "ID")
     private String id;
-    @XmlAttribute(name = "objid")
+    @XmlAttribute(name = "OBJID")
     private String objId;
-    @XmlAttribute(name = "label")
+    @XmlAttribute(name = "LABEL")
     private String label;
-    @XmlAttribute(name = "type")
+    @XmlAttribute(name = "TYPE")
     private String type;
-    @XmlAttribute(name = "profile")
+    @XmlAttribute(name = "PROFILE")
     private String profile;
     @XmlElement(name = "metsHdr", namespace = "http://www.loc.gov/METS/")
     private List<MetsHeader> headers;

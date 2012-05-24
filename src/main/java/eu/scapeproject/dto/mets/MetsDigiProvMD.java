@@ -6,7 +6,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "digiProvMD", namespace = "http://www.loc.gov/METS/")
 public class MetsDigiProvMD {
-    @XmlAttribute(name = "id", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "ID", namespace = "http://www.loc.gov/METS/")
     private String id;
     @XmlAttribute(name = "groupid", namespace = "http://www.loc.gov/METS/")
     private String groupId;

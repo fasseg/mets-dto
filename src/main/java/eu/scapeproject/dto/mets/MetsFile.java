@@ -10,29 +10,29 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "file", namespace = "http://www.loc.gov/METS/")
 public class MetsFile {
-    @XmlAttribute(name = "id", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "ID", namespace = "http://www.loc.gov/METS/")
     private String id;
-    @XmlAttribute(name = "mimetype", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "MIMETYPE", namespace = "http://www.loc.gov/METS/")
     private String mimeType;
-    @XmlAttribute(name = "seq", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "SEQ", namespace = "http://www.loc.gov/METS/")
     private int seq;
-    @XmlAttribute(name = "size", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "SIZE", namespace = "http://www.loc.gov/METS/")
     private int size;
-    @XmlAttribute(name = "created", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "CREATED", namespace = "http://www.loc.gov/METS/")
     private Date created;
-    @XmlAttribute(name = "checksum", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "CHECKSUM", namespace = "http://www.loc.gov/METS/")
     private String checkSum;
-    @XmlAttribute(name = "checksumtype", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "CHECKSUMTYPE", namespace = "http://www.loc.gov/METS/")
     private String checksumType;
-    @XmlAttribute(name = "ownerid", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "OWNERID", namespace = "http://www.loc.gov/METS/")
     private String ownerId;
-    @XmlAttribute(name = "admid", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "ADMID", namespace = "http://www.loc.gov/METS/")
     private String admId;
-    @XmlAttribute(name = "dmdid", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "DMDID", namespace = "http://www.loc.gov/METS/")
     private String dmdId;
-    @XmlAttribute(name = "groupid", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "GROUPID", namespace = "http://www.loc.gov/METS/")
     private String groupId;
-    @XmlAttribute(name = "use", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "USE", namespace = "http://www.loc.gov/METS/")
     private String use;
     @XmlElement(name = "FLocat", namespace = "http://www.loc.gov/METS/")
     private List<MetsFileLocation> fileLocations;

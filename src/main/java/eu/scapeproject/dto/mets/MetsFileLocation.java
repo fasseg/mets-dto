@@ -7,23 +7,23 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "FLocat", namespace = "http://www.loc.gov/METS/")
 public class MetsFileLocation {
-    @XmlAttribute(name = "id", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "ID", namespace = "http://www.loc.gov/METS/")
     private String id;
-    @XmlAttribute(name = "loctype", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "LOCTYPE", namespace = "http://www.loc.gov/METS/")
     private String locType;
-    @XmlAttribute(name = "use", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "USE", namespace = "http://www.loc.gov/METS/")
     private String use;
-    @XmlAttribute(name = "href", namespace = "http://www.w3.org/1999/xlink")
+    @XmlAttribute(name = "HREF", namespace = "http://www.w3.org/1999/xlink")
     private URI href;
-    @XmlAttribute(name = "role", namespace = "http://www.w3.org/1999/xlink")
+    @XmlAttribute(name = "ROLE", namespace = "http://www.w3.org/1999/xlink")
     private URI role;
-    @XmlAttribute(name = "arcrole", namespace = "http://www.w3.org/1999/xlink")
+    @XmlAttribute(name = "ARCROLE", namespace = "http://www.w3.org/1999/xlink")
     private URI arcRole;
-    @XmlAttribute(name = "title", namespace = "http://www.w3.org/1999/xlink")
+    @XmlAttribute(name = "TITLE", namespace = "http://www.w3.org/1999/xlink")
     private String title;
-    @XmlAttribute(name = "show", namespace = "http://www.w3.org/1999/xlink")
+    @XmlAttribute(name = "SHOW", namespace = "http://www.w3.org/1999/xlink")
     private String show;
-    @XmlAttribute(name = "actuate", namespace = "http://www.w3.org/1999/xlink")
+    @XmlAttribute(name = "ACTUATE", namespace = "http://www.w3.org/1999/xlink")
     private String actuate;
 
     private MetsFileLocation() {

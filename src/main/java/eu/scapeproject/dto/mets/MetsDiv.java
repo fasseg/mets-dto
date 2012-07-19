@@ -10,27 +10,27 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "div", namespace = "http://www.loc.gov/METS/")
 public class MetsDiv {
-    @XmlAttribute(name = "ID", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "ID")
     private String id;
-    @XmlAttribute(name = "TYPE", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "TYPE")
     private String type;
-    @XmlAttribute(name = "LABEL", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "LABEL")
     private String label;
-    @XmlAttribute(name = "DMDID", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "DMDID")
     private String dmdId;
-    @XmlAttribute(name = "ADMID", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "ADMID")
     private String admId;
-    @XmlAttribute(name = "ORDER", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "ORDER")
     private int order;
-    @XmlAttribute(name = "ORDERLABEL", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "ORDERLABEL")
     private String orderLabel;
-    @XmlAttribute(name = "CONTENTIDS", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "CONTENTIDS")
     private URI contentIds;
-    @XmlAttribute(name = "LABEL", namespace = "http://www.w3.org/1999/xlink")
+    @XmlAttribute(name = "LABEL")
     private String xlinkLabel;
-    @XmlElement(name = "fptr", namespace = "http://www.loc.gov/METS/")
+    @XmlElement(name = "fptr")
     private List<MetsFilePtr> filePointers;
-    @XmlElement(name = "div", namespace = "http://www.loc.gov/METS/")
+    @XmlElement(name = "div")
     private List<MetsDiv> subDivs;
 
     private MetsDiv() {

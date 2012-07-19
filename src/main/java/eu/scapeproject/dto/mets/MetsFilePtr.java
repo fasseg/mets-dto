@@ -7,11 +7,11 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="fptr", namespace = "http://www.loc.gov/METS/")
 public class MetsFilePtr {
-    @XmlAttribute(name="ID", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name="ID")
     private String id;
-    @XmlAttribute(name="FILEID", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name="FILEID")
     private String fileId;
-    @XmlAttribute(name="CONTENTIDS", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name="CONTENTIDS")
     private URI contentids;
     
     private MetsFilePtr(){

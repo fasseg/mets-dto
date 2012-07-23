@@ -79,7 +79,7 @@ public class MetsMDWrap {
         return size;
     }
 
-    public Object getXmlData() {
+    public MetsXMLData getXmlData() {
         return xmlData;
     }
 

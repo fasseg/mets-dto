@@ -140,7 +140,7 @@ public class MetsFile {
             return this;
         }
 
-        public Builder addfileLocation(MetsFileLocation location) {
+        public Builder addFileLocation(MetsFileLocation location) {
             if (this.fileLocations == null) {
                 this.fileLocations = new ArrayList<MetsFileLocation>();
             }

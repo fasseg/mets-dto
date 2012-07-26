@@ -11,180 +11,198 @@ import javax.xml.bind.annotation.XmlType;
 @XmlRootElement(name = "mets", namespace = "http://www.loc.gov/METS/")
 @XmlType(namespace = "http://www.loc.gov/METS/")
 public class MetsDocument {
-    @XmlAttribute(name = "ID")
-    private String id;
-    @XmlAttribute(name = "OBJID")
-    private String objId;
-    @XmlAttribute(name = "LABEL")
-    private String label;
-    @XmlAttribute(name = "TYPE")
-    private String type;
-    @XmlAttribute(name = "PROFILE")
-    private String profile;
-    @XmlElement(name = "metsHdr", namespace = "http://www.loc.gov/METS/")
-    private List<MetsHeader> headers;
-    @XmlElement(name = "dmdSec", namespace = "http://www.loc.gov/METS/")
-    private MetsDMDSec dmdSec;
-    @XmlElement(name = "amdSec", namespace = "http://www.loc.gov/METS/")
-    private List<MetsAMDSec> amdSecs;
-    @XmlElement(name = "fileSec", namespace = "http://www.loc.gov/METS/")
-    private List<MetsFileSec> fileSecs;
-    @XmlElement(name = "structMap", namespace = "http://www.loc.gov/METS/")
-    private List<MetsStructMap> structMaps;
+	@XmlAttribute(name = "ID")
+	private String id;
+	@XmlAttribute(name = "OBJID")
+	private String objId;
+	@XmlAttribute(name = "LABEL")
+	private String label;
+	@XmlAttribute(name = "TYPE")
+	private String type;
+	@XmlAttribute(name = "PROFILE")
+	private String profile;
+	@XmlElement(name = "metsHdr", namespace = "http://www.loc.gov/METS/")
+	private List<MetsHeader> headers;
+	@XmlElement(name = "dmdSec", namespace = "http://www.loc.gov/METS/")
+	private MetsDMDSec dmdSec;
+	@XmlElement(name = "amdSec", namespace = "http://www.loc.gov/METS/")
+	private List<MetsAMDSec> amdSecs;
+	@XmlElement(name = "fileSec", namespace = "http://www.loc.gov/METS/")
+	private List<MetsFileSec> fileSecs;
+	@XmlElement(name = "structMap", namespace = "http://www.loc.gov/METS/")
+	private List<MetsStructMap> structMaps;
 
-    private MetsDocument() {
-        super();
-    }
+	private MetsDocument() {
+		super();
+	}
 
-    private MetsDocument(Builder builder) {
-        this.id = builder.id;
-        this.objId = builder.objId;
-        this.label = builder.label;
-        this.type = builder.type;
-        this.profile = builder.profile;
-        this.headers = builder.headers;
-        this.dmdSec = builder.dmdSec;
-        this.amdSecs = builder.amdSecs;
-        this.fileSecs = builder.fileSecs;
-        this.structMaps = builder.structMaps;
-    }
+	private MetsDocument(Builder builder) {
+		this.id = builder.id;
+		this.objId = builder.objId;
+		this.label = builder.label;
+		this.type = builder.type;
+		this.profile = builder.profile;
+		this.headers = builder.headers;
+		this.dmdSec = builder.dmdSec;
+		this.amdSecs = builder.amdSecs;
+		this.fileSecs = builder.fileSecs;
+		this.structMaps = builder.structMaps;
+	}
 
-    public List<MetsAMDSec> getAmdSecs() {
-        return amdSecs;
-    }
+	public List<MetsAMDSec> getAmdSecs() {
+		return amdSecs;
+	}
 
-    public MetsDMDSec getDmdSec() {
-        return dmdSec;
-    }
+	public MetsDMDSec getDmdSec() {
+		return dmdSec;
+	}
 
-    public List<MetsFileSec> getFileSecs() {
-        return fileSecs;
-    }
+	public List<MetsFileSec> getFileSecs() {
+		return fileSecs;
+	}
 
-    public List<MetsHeader> getHeaders() {
-        return headers;
-    }
+	public List<MetsHeader> getHeaders() {
+		return headers;
+	}
 
-    public String getId() {
-        return id;
-    }
+	public String getId() {
+		return id;
+	}
 
-    public String getLabel() {
-        return label;
-    }
+	public String getLabel() {
+		return label;
+	}
 
-    public String getObjId() {
-        return objId;
-    }
+	public String getObjId() {
+		return objId;
+	}
 
-    public String getProfile() {
-        return profile;
-    }
+	public String getProfile() {
+		return profile;
+	}
 
-    public List<MetsStructMap> getStructMaps() {
-        return structMaps;
-    }
+	public List<MetsStructMap> getStructMaps() {
+		return structMaps;
+	}
 
-    public String getType() {
-        return type;
-    }
+	public String getType() {
+		return type;
+	}
 
-    public static class Builder {
-        private String id;
-        private String objId;
-        private String label;
-        private String type;
-        private String profile;
-        private MetsDMDSec dmdSec;
-        private List<MetsHeader> headers;
-        private List<MetsAMDSec> amdSecs;
-        private List<MetsFileSec> fileSecs;
-        private List<MetsStructMap> structMaps;
+	public static class Builder {
+		private String id;
+		private String objId;
+		private String label;
+		private String type;
+		private String profile;
+		private MetsDMDSec dmdSec;
+		private List<MetsHeader> headers;
+		private List<MetsAMDSec> amdSecs;
+		private List<MetsFileSec> fileSecs;
+		private List<MetsStructMap> structMaps;
 
-        public Builder addHeader(MetsHeader header){
-            if (this.headers == null){
-                this.headers=new ArrayList<MetsHeader>();
-            }
-            this.headers.add(header);
-            return this;
-        }
-        
-        public Builder addAmdSec(MetsAMDSec amdSec){
-            if (this.amdSecs == null){
-                this.amdSecs=new ArrayList<MetsAMDSec>();
-            }
-            this.amdSecs.add(amdSec);
-            return this;
-        }
-        
-        public Builder addfileSec(MetsFileSec fileSec){
-            if (this.fileSecs == null){
-                this.fileSecs=new ArrayList<MetsFileSec>();
-            }
-            this.fileSecs.add(fileSec);
-            return this;
-        }
+		public Builder addHeader(MetsHeader header) {
+			if (this.headers == null) {
+				this.headers = new ArrayList<MetsHeader>();
+			}
+			this.headers.add(header);
+			return this;
+		}
 
-        public Builder addstructMap(MetsStructMap structMap){
-            if (this.structMaps == null){
-                this.structMaps=new ArrayList<MetsStructMap>();
-            }
-            this.structMaps.add(structMap);
-            return this;
-        }
+		public Builder() {
+			super();
+		}
 
-        public Builder amdSecs(List<MetsAMDSec> amdSecs) {
-            this.amdSecs = amdSecs;
-            return this;
-        }
+		public Builder(MetsDocument doc) {
+			// TODO: deep copy
+			this.id = doc.id;
+			this.objId = doc.objId;
+			this.label = doc.label;
+			this.type = doc.type;
+			this.profile = doc.profile;
+			this.dmdSec = doc.dmdSec;
+			this.headers = doc.headers;
+			this.amdSecs = doc.amdSecs;
+			this.fileSecs = doc.fileSecs;
+			this.structMaps = doc.structMaps;
+		}
 
-        public MetsDocument build() {
-            return new MetsDocument(this);
-        }
+		public Builder addAmdSec(MetsAMDSec amdSec) {
+			if (this.amdSecs == null) {
+				this.amdSecs = new ArrayList<MetsAMDSec>();
+			}
+			this.amdSecs.add(amdSec);
+			return this;
+		}
 
-        public Builder dmdSec(MetsDMDSec dmdSec) {
-            this.dmdSec = dmdSec;
-            return this;
-        }
+		public Builder addfileSec(MetsFileSec fileSec) {
+			if (this.fileSecs == null) {
+				this.fileSecs = new ArrayList<MetsFileSec>();
+			}
+			this.fileSecs.add(fileSec);
+			return this;
+		}
 
-        public Builder fileSecs(List<MetsFileSec> fileSecs) {
-            this.fileSecs = fileSecs;
-            return this;
-        }
+		public Builder addstructMap(MetsStructMap structMap) {
+			if (this.structMaps == null) {
+				this.structMaps = new ArrayList<MetsStructMap>();
+			}
+			this.structMaps.add(structMap);
+			return this;
+		}
 
-        public Builder headers(List<MetsHeader> headers) {
-            this.headers = headers;
-            return this;
-        }
+		public Builder amdSecs(List<MetsAMDSec> amdSecs) {
+			this.amdSecs = amdSecs;
+			return this;
+		}
 
-        public Builder id(String id) {
-            this.id = id;
-            return this;
-        }
+		public MetsDocument build() {
+			return new MetsDocument(this);
+		}
 
-        public Builder label(String label) {
-            this.label = label;
-            return this;
-        }
+		public Builder dmdSec(MetsDMDSec dmdSec) {
+			this.dmdSec = dmdSec;
+			return this;
+		}
 
-        public Builder objId(String objId) {
-            this.objId = objId;
-            return this;
-        }
+		public Builder fileSecs(List<MetsFileSec> fileSecs) {
+			this.fileSecs = fileSecs;
+			return this;
+		}
 
-        public Builder profile(String profile) {
-            this.profile = profile;
-            return this;
-        }
+		public Builder headers(List<MetsHeader> headers) {
+			this.headers = headers;
+			return this;
+		}
 
-        public Builder structMaps(List<MetsStructMap> structMaps) {
-            this.structMaps = structMaps;
-            return this;
-        }
+		public Builder id(String id) {
+			this.id = id;
+			return this;
+		}
 
-        public Builder type(String type) {
-            this.type = type;
-            return this;
-        }
-    }
+		public Builder label(String label) {
+			this.label = label;
+			return this;
+		}
+
+		public Builder objId(String objId) {
+			this.objId = objId;
+			return this;
+		}
+
+		public Builder profile(String profile) {
+			this.profile = profile;
+			return this;
+		}
+
+		public Builder structMaps(List<MetsStructMap> structMaps) {
+			this.structMaps = structMaps;
+			return this;
+		}
+
+		public Builder type(String type) {
+			this.type = type;
+			return this;
+		}
+	}
 }

@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "xmlData", namespace = "http://www.loc.gov/METS/")
 public class MetsXMLData {
-    @XmlElement(name="metadata",namespace="http://www.scapeproject.eu/METS/wrapper")
+    @XmlElement(name="metadata",namespace="http://www.scapeproject.eu/model")
     private MetsMetadata data;
 
     @SuppressWarnings("unused")

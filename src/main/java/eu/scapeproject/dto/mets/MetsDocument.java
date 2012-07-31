@@ -101,14 +101,6 @@ public class MetsDocument {
 		private List<MetsFileSec> fileSecs;
 		private List<MetsStructMap> structMaps;
 
-		public Builder addHeader(MetsHeader header) {
-			if (this.headers == null) {
-				this.headers = new ArrayList<MetsHeader>();
-			}
-			this.headers.add(header);
-			return this;
-		}
-
 		public Builder() {
 			super();
 		}
@@ -140,6 +132,14 @@ public class MetsDocument {
 				this.fileSecs = new ArrayList<MetsFileSec>();
 			}
 			this.fileSecs.add(fileSec);
+			return this;
+		}
+
+		public Builder addHeader(MetsHeader header) {
+			if (this.headers == null) {
+				this.headers = new ArrayList<MetsHeader>();
+			}
+			this.headers.add(header);
 			return this;
 		}
 

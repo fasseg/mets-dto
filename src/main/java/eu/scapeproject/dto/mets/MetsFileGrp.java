@@ -65,6 +65,14 @@ public class MetsFileGrp {
             this.id = id;
         }
 
+        public Builder addFile(MetsFile file) {
+            if (this.files == null) {
+                this.files = new ArrayList<MetsFile>();
+            }
+            this.files.add(file);
+            return this;
+        }
+
         public Builder admId(String admId) {
             this.admId = admId;
             return this;
@@ -72,14 +80,6 @@ public class MetsFileGrp {
 
         public MetsFileGrp build() {
             return new MetsFileGrp(this);
-        }
-
-        public Builder addFile(MetsFile file) {
-            if (this.files == null) {
-                this.files = new ArrayList<MetsFile>();
-            }
-            this.files.add(file);
-            return this;
         }
 
         public Builder files(List<MetsFile> files) {

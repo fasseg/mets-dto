@@ -56,16 +56,16 @@ public class MetsDMDSec {
 		return id;
 	}
 
+	public MetsMDRef getMetadataReference() {
+		return metadataReference;
+	}
+
 	public MetsMDWrap getMetadataWrapper() {
 		return metadataWrapper;
 	}
 
 	public String getStatus() {
 		return status;
-	}
-
-	public MetsMDRef getMetadataReference() {
-		return metadataReference;
 	}
 
 	public static class Builder {
@@ -79,11 +79,6 @@ public class MetsDMDSec {
 
 		public Builder(String id) {
 			this.id = id;
-		}
-
-		public Builder mdRef(MetsMDRef mdRef) {
-			this.mdRef = mdRef;
-			return this;
 		}
 
 		public Builder admId(String admId) {
@@ -102,6 +97,11 @@ public class MetsDMDSec {
 
 		public Builder groupId(String groupId) {
 			this.groupId = groupId;
+			return this;
+		}
+
+		public Builder mdRef(MetsMDRef mdRef) {
+			this.mdRef = mdRef;
 			return this;
 		}
 

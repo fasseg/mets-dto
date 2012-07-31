@@ -33,20 +33,20 @@ public class MetsAMDSec {
         return id;
     }
 
-    public MetsTechMD getTechnicalMetadata() {
-        return technicalMetadata;
-    }
-
     public MetsDigiProvMD getProvenanceMetadata() {
         return provenanceMetadata;
+    }
+
+    public MetsRightsMD getRightsMetadata() {
+        return rightsMetadata;
     }
 
     public MetsSourceMD getSourceMetadata() {
         return sourceMetadata;
     }
 
-    public MetsRightsMD getRightsMetadata() {
-        return rightsMetadata;
+    public MetsTechMD getTechnicalMetadata() {
+        return technicalMetadata;
     }
 
     public static class Builder {

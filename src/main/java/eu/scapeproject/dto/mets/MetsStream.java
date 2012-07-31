@@ -20,16 +20,12 @@ public class MetsStream {
         super();
     }
 
-    public String getId() {
-        return id;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public String getOwnerId() {
-        return ownerId;
+    private MetsStream(Builder builder) {
+        this.id = builder.id;
+        this.type = builder.type;
+        this.ownerId = builder.ownerId;
+        this.amdMdId = builder.amdMdId;
+        this.dmdId = builder.dmdId;
     }
 
     public String getAmdMdId() {
@@ -40,6 +36,18 @@ public class MetsStream {
         return dmdId;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public String getOwnerId() {
+        return ownerId;
+    }
+
+    public String getType() {
+        return type;
+    }
+
     public static class Builder {
         private String id;
         private String type;
@@ -47,13 +55,22 @@ public class MetsStream {
         private String amdMdId;
         private String dmdId;
 
-        public Builder id(String id) {
-            this.id = id;
+        public Builder amdMdId(String amdMdId) {
+            this.amdMdId = amdMdId;
             return this;
         }
 
-        public Builder type(String type) {
-            this.type = type;
+        public MetsStream build() {
+            return new MetsStream(this);
+        }
+
+        public Builder dmdId(String dmdId) {
+            this.dmdId = dmdId;
+            return this;
+        }
+
+        public Builder id(String id) {
+            this.id = id;
             return this;
         }
 
@@ -62,26 +79,9 @@ public class MetsStream {
             return this;
         }
 
-        public Builder amdMdId(String amdMdId) {
-            this.amdMdId = amdMdId;
+        public Builder type(String type) {
+            this.type = type;
             return this;
         }
-
-        public Builder dmdId(String dmdId) {
-            this.dmdId = dmdId;
-            return this;
-        }
-
-        public MetsStream build() {
-            return new MetsStream(this);
-        }
-    }
-
-    private MetsStream(Builder builder) {
-        this.id = builder.id;
-        this.type = builder.type;
-        this.ownerId = builder.ownerId;
-        this.amdMdId = builder.amdMdId;
-        this.dmdId = builder.dmdId;
     }
 }

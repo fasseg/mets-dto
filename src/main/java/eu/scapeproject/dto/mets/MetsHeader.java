@@ -46,6 +46,14 @@ public class MetsHeader {
 		return admId;
 	}
 
+	public List<MetsAgent> getAgents() {
+		return agents;
+	}
+
+	public List<MetsAlternativeIdentifer> getAlternativeIdentifiers() {
+		return alternativeIdentifiers;
+	}
+
 	public Date getCreatedDate() {
 		return createdDate;
 	}
@@ -60,14 +68,6 @@ public class MetsHeader {
 
 	public String getRecordStatus() {
 		return recordStatus;
-	}
-
-	public List<MetsAgent> getAgents() {
-		return agents;
-	}
-
-	public List<MetsAlternativeIdentifer> getAlternativeIdentifiers() {
-		return alternativeIdentifiers;
 	}
 
 	public int getVersionNumber() {
@@ -104,13 +104,18 @@ public class MetsHeader {
 			return this;
 		}
 
+		public Builder admId(String admId) {
+			this.admId = admId;
+			return this;
+		}
+
 		public Builder agents(List<MetsAgent> agents) {
 			this.agents = agents;
 			return this;
 		}
 
-		public Builder admId(String admId) {
-			this.admId = admId;
+		public Builder alternativeIdentifiers(List<MetsAlternativeIdentifer> alternativeIdentifiers) {
+			this.alternativeIdentifiers = alternativeIdentifiers;
 			return this;
 		}
 
@@ -132,14 +137,9 @@ public class MetsHeader {
 			this.recordStatus = recordStatus;
 			return this;
 		}
-
+		
 		public Builder versionNumber(int versionNumber) {
 			this.versionNumber = versionNumber;
-			return this;
-		}
-		
-		public Builder alternativeIdentifiers(List<MetsAlternativeIdentifer> alternativeIdentifiers) {
-			this.alternativeIdentifiers = alternativeIdentifiers;
 			return this;
 		}
 	}

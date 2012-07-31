@@ -29,6 +29,10 @@ public class MetsStructMap {
         this.divisions = builder.divisions;
     }
 
+    public List<MetsDiv> getDivisions() {
+        return divisions;
+    }
+
     public String getId() {
         return id;
     }
@@ -41,19 +45,11 @@ public class MetsStructMap {
         return type;
     }
 
-    public List<MetsDiv> getDivisions() {
-        return divisions;
-    }
-
     public static class Builder {
         private String id;
         private String type;
         private String label;
         private List<MetsDiv> divisions;
-
-        public MetsStructMap build() {
-            return new MetsStructMap(this);
-        }
 
         public Builder addDivision(MetsDiv div) {
             if (this.divisions == null) {
@@ -61,6 +57,10 @@ public class MetsStructMap {
             }
             this.divisions.add(div);
             return this;
+        }
+
+        public MetsStructMap build() {
+            return new MetsStructMap(this);
         }
 
         public Builder divisions(List<MetsDiv> divisions) {

@@ -13,13 +13,13 @@ public class MetsXMLData {
         super();
     }
 
-    public Object getData() {
-        return data;
-    }
-
     public MetsXMLData(MetsMetadata data) {
         super();
         this.data = data;
+    }
+
+    public Object getData() {
+        return data;
     }
 
 }

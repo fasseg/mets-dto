@@ -60,14 +60,6 @@ public class MetsFile {
         this.streams = builder.streams;
     }
 
-    public List<MetsStream> getStreams() {
-        return streams;
-    }
-
-    public List<MetsFileLocation> getFileLocations() {
-        return fileLocations;
-    }
-
     public String getAdmId() {
         return admId;
     }
@@ -86,6 +78,10 @@ public class MetsFile {
 
     public String getDmdId() {
         return dmdId;
+    }
+
+    public List<MetsFileLocation> getFileLocations() {
+        return fileLocations;
     }
 
     public String getGroupId() {
@@ -112,6 +108,10 @@ public class MetsFile {
         return size;
     }
 
+    public List<MetsStream> getStreams() {
+        return streams;
+    }
+
     public String getUse() {
         return use;
     }
@@ -132,12 +132,8 @@ public class MetsFile {
         private List<MetsFileLocation> fileLocations;
         private List<MetsStream> streams;
 
-        public Builder addStream(MetsStream stream) {
-            if (this.streams == null) {
-                this.streams = new ArrayList<MetsStream>();
-            }
-            this.streams.add(stream);
-            return this;
+        public Builder(String id) {
+            this.id = id;
         }
 
         public Builder addFileLocation(MetsFileLocation location) {
@@ -148,8 +144,12 @@ public class MetsFile {
             return this;
         }
 
-        public Builder(String id) {
-            this.id = id;
+        public Builder addStream(MetsStream stream) {
+            if (this.streams == null) {
+                this.streams = new ArrayList<MetsStream>();
+            }
+            this.streams.add(stream);
+            return this;
         }
 
         public Builder admId(String admId) {
@@ -181,6 +181,11 @@ public class MetsFile {
             return this;
         }
 
+        public Builder fileLocations(List<MetsFileLocation> fileLocations) {
+            this.fileLocations = fileLocations;
+            return this;
+        }
+
         public Builder groupId(String groupId) {
             this.groupId = groupId;
             return this;
@@ -206,18 +211,13 @@ public class MetsFile {
             return this;
         }
 
-        public Builder use(String use) {
-            this.use = use;
-            return this;
-        }
-
         public Builder streams(List<MetsStream> streams) {
             this.streams = streams;
             return this;
         }
 
-        public Builder fileLocations(List<MetsFileLocation> fileLocations) {
-            this.fileLocations = fileLocations;
+        public Builder use(String use) {
+            this.use = use;
             return this;
         }
     }

@@ -26,16 +26,16 @@ public class MetsTechMD {
         this.metadataWrapper = builder.metadataWrapper;
     }
 
-    public String getId() {
-        return id;
+    public String getAdmId() {
+        return admId;
     }
 
     public String getGroupId() {
         return groupId;
     }
 
-    public String getAdmId() {
-        return admId;
+    public String getId() {
+        return id;
     }
 
     public MetsMDWrap getMetadataWrapper() {

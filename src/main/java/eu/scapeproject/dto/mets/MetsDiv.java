@@ -83,16 +83,16 @@ public class MetsDiv {
         return orderLabel;
     }
 
+    public List<MetsDiv> getSubDivs() {
+        return subDivs;
+    }
+
     public String getType() {
         return type;
     }
 
     public String getXlinkLabel() {
         return xlinkLabel;
-    }
-
-    public List<MetsDiv> getSubDivs() {
-        return subDivs;
     }
 
     public static class Builder {
@@ -108,19 +108,19 @@ public class MetsDiv {
         private List<MetsFilePtr> filePointers;
         private List<MetsDiv> subDivs;
 
-        public Builder addSubDiv(MetsDiv subDiv) {
-            if (this.subDivs == null) {
-                this.subDivs = new ArrayList<MetsDiv>();
-            }
-            this.subDivs.add(subDiv);
-            return this;
-        }
-
         public Builder addFilePointer(MetsFilePtr filePointer) {
             if (this.filePointers == null) {
                 this.filePointers = new ArrayList<MetsFilePtr>();
             }
             this.filePointers.add(filePointer);
+            return this;
+        }
+
+        public Builder addSubDiv(MetsDiv subDiv) {
+            if (this.subDivs == null) {
+                this.subDivs = new ArrayList<MetsDiv>();
+            }
+            this.subDivs.add(subDiv);
             return this;
         }
 

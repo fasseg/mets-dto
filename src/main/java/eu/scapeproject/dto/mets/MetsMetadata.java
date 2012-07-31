@@ -1,7 +1,12 @@
 package eu.scapeproject.dto.mets;
 
+import javax.xml.bind.annotation.XmlAttribute;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name="mets-metadata",namespace="http::/scapeproject.eu/model")
 public abstract class MetsMetadata {
-	protected String id;
+	@XmlAttribute(name="identifier",namespace="http::/scapeproject.eu/model")
+    protected String id;
 	
 	protected MetsMetadata(){
 		super();

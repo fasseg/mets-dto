@@ -12,7 +12,7 @@ public class MetsTechMD {
     private String groupId;
     @XmlAttribute(name = "ADMID")
     private String admId;
-    @XmlElement(name = "mdWrap")
+    @XmlElement(name = "mdWrap",namespace = "http://www.loc.gov/METS/")
     private MetsMDWrap metadataWrapper;
 
     private MetsTechMD() {

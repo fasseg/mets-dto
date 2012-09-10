@@ -5,7 +5,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name="mets-metadata",namespace="http::/scapeproject.eu/model")
 public abstract class MetsMetadata {
-	@XmlAttribute(name="identifier",namespace="http::/scapeproject.eu/model")
+	@XmlAttribute(name="identifier",namespace="http://scapeproject.eu/model")
     protected String id;
 	
 	protected MetsMetadata(){

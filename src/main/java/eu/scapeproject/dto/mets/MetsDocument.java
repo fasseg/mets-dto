@@ -28,7 +28,7 @@ public class MetsDocument {
 	@XmlElement(name = "amdSec", namespace = "http://www.loc.gov/METS/")
 	private List<MetsAMDSec> amdSecs;
 	@XmlElement(name = "fileSec", namespace = "http://www.loc.gov/METS/")
-	private List<MetsFileSec> fileSecs;
+	private MetsFileSec fileSec;
 	@XmlElement(name = "structMap", namespace = "http://www.loc.gov/METS/")
 	private List<MetsStructMap> structMaps;
 
@@ -45,7 +45,7 @@ public class MetsDocument {
 		this.headers = builder.headers;
 		this.dmdSec = builder.dmdSec;
 		this.amdSecs = builder.amdSecs;
-		this.fileSecs = builder.fileSecs;
+		this.fileSec = builder.fileSec;
 		this.structMaps = builder.structMaps;
 	}
 
@@ -57,8 +57,8 @@ public class MetsDocument {
 		return dmdSec;
 	}
 
-	public List<MetsFileSec> getFileSecs() {
-		return fileSecs;
+	public MetsFileSec getFileSec() {
+		return fileSec;
 	}
 
 	public List<MetsHeader> getHeaders() {
@@ -98,7 +98,7 @@ public class MetsDocument {
 		private MetsDMDSec dmdSec;
 		private List<MetsHeader> headers;
 		private List<MetsAMDSec> amdSecs;
-		private List<MetsFileSec> fileSecs;
+		private MetsFileSec fileSec;
 		private List<MetsStructMap> structMaps;
 
 		public Builder() {
@@ -115,7 +115,7 @@ public class MetsDocument {
 			this.dmdSec = doc.dmdSec;
 			this.headers = doc.headers;
 			this.amdSecs = doc.amdSecs;
-			this.fileSecs = doc.fileSecs;
+			this.fileSec = doc.fileSec;
 			this.structMaps = doc.structMaps;
 		}
 
@@ -124,14 +124,6 @@ public class MetsDocument {
 				this.amdSecs = new ArrayList<MetsAMDSec>();
 			}
 			this.amdSecs.add(amdSec);
-			return this;
-		}
-
-		public Builder addfileSec(MetsFileSec fileSec) {
-			if (this.fileSecs == null) {
-				this.fileSecs = new ArrayList<MetsFileSec>();
-			}
-			this.fileSecs.add(fileSec);
 			return this;
 		}
 
@@ -165,8 +157,8 @@ public class MetsDocument {
 			return this;
 		}
 
-		public Builder fileSecs(List<MetsFileSec> fileSecs) {
-			this.fileSecs = fileSecs;
+		public Builder fileSec(MetsFileSec fileSec) {
+			this.fileSec = fileSec;
 			return this;
 		}
 

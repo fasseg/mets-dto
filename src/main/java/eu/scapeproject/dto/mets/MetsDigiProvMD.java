@@ -4,7 +4,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement(name = "digiProvMD", namespace = "http://www.loc.gov/METS/")
+@XmlRootElement(name = "digiprovMD", namespace = "http://www.loc.gov/METS/")
 public class MetsDigiProvMD {
     @XmlAttribute(name = "ID")
     private String id;

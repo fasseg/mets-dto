@@ -10,7 +10,7 @@ public class MetsAMDSec {
     private String id;
     @XmlElement(name = "techMD", namespace = "http://www.loc.gov/METS/")
     private MetsTechMD technicalMetadata;
-    @XmlElement(name = "digiProvMD", namespace = "http://www.loc.gov/METS/")
+    @XmlElement(name = "digiprovMD", namespace = "http://www.loc.gov/METS/")
     private MetsDigiProvMD provenanceMetadata;
     @XmlElement(name = "sourceMD", namespace = "http://www.loc.gov/METS/")
     private MetsSourceMD sourceMetadata;

@@ -10,12 +10,12 @@ public class MetsAMDSec {
     private String id;
     @XmlElement(name = "techMD", namespace = "http://www.loc.gov/METS/")
     private MetsTechMD technicalMetadata;
-    @XmlElement(name = "digiprovMD", namespace = "http://www.loc.gov/METS/")
-    private MetsDigiProvMD provenanceMetadata;
-    @XmlElement(name = "sourceMD", namespace = "http://www.loc.gov/METS/")
-    private MetsSourceMD sourceMetadata;
     @XmlElement(name = "rightsMD", namespace = "http://www.loc.gov/METS/")
     private MetsRightsMD rightsMetadata;
+    @XmlElement(name = "sourceMD", namespace = "http://www.loc.gov/METS/")
+    private MetsSourceMD sourceMetadata;
+    @XmlElement(name = "digiprovMD", namespace = "http://www.loc.gov/METS/")
+    private MetsDigiProvMD provenanceMetadata;
 
     private MetsAMDSec() {
         super();

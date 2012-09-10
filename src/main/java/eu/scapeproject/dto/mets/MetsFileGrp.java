@@ -10,13 +10,13 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "fielGrp", namespace = "http://www.loc.gov/METS/")
 public class MetsFileGrp {
-    @XmlAttribute(name = "ID", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "ID")
     private String id;
-    @XmlAttribute(name = "VERSDATE", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "VERSDATE")
     private Date versDate;
-    @XmlAttribute(name = "ADMID", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "ADMID")
     private String admId;
-    @XmlAttribute(name = "USE", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "USE")
     private String use;
     @XmlElement(name = "file", namespace = "http://www.loc.gov/METS/")
     private List<MetsFile> files;

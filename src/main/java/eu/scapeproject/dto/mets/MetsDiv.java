@@ -28,9 +28,9 @@ public class MetsDiv {
     private URI contentIds;
     @XmlAttribute(name = "LABEL")
     private String xlinkLabel;
-    @XmlElement(name = "fptr")
+    @XmlElement(name = "fptr", namespace = "http://www.loc.gov/METS/")
     private List<MetsFilePtr> filePointers;
-    @XmlElement(name = "div")
+    @XmlElement(name = "div", namespace = "http://www.loc.gov/METS/")
     private List<MetsDiv> subDivs;
 
     private MetsDiv() {

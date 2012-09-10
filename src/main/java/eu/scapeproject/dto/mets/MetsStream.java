@@ -5,15 +5,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "stream", namespace = "http://www.loc.gov/METS/")
 public class MetsStream {
-    @XmlAttribute(name = "ID", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "ID")
     private String id;
-    @XmlAttribute(name = "TYPE", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "streamType")
     private String type;
-    @XmlAttribute(name = "OWNERID", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "OWNERID")
     private String ownerId;
-    @XmlAttribute(name = "AMDMDID", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "ADMID")
     private String amdMdId;
-    @XmlAttribute(name = "DMDID", namespace = "http://www.loc.gov/METS/")
+    @XmlAttribute(name = "DMDID")
     private String dmdId;
 
     private MetsStream() {
